@@ -7,10 +7,10 @@ Does replacing SATIVA's placement engine with EPA-ng change its answers?
 Three results, measured against unmodified SATIVA v0.9.3 on ITS alignments of 100 to 5402
 sequences:
 
-- **Speed.** 257 s to 12.7 s at 1600 sequences on 8 threads, 1536 s to 87 s at 5402 on 16.
+- **Speed.** 257 s to 15.4 s at 1600 sequences on 8 threads, 1536 s to 87 s at 5402 on 16.
   The gain is parallelism over queries; RAxML gains little from threads on a 242 column
   alignment.
-- **Agreement.** 0.96 recall and 0.94 precision at 800 sequences with K=25 folds, against
+- **Agreement.** 0.98 recall and 0.90 precision at 800 sequences with K=25 folds, against
   0.92 / 0.90 when unmodified SATIVA merely changes its own substitution model.
 - **Detection.** Of 33 mislabels injected into three clades, unmodified SATIVA finds 28 and
   this version 33. Every miss happens when at least two sequences share the wrong label,

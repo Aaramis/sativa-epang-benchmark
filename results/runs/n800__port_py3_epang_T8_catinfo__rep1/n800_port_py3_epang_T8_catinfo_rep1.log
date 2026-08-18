@@ -3,7 +3,7 @@ By A.Kozlov and J.Zhang, the Exelixis Lab. Based on RAxML 8.2.3 by A.Stamatakis.
 
 SATIVA was called as follows:
 
-/pools/apollon/ummisco/home/agardette/augmentation_taxonomie/augmentation_taxonomie/18.sativa_speedup/sativa_epang/sativa.py -s n800.fasta -t n800.tax -m ultrafast -C 0.4 -x BOT -T 8 -p 42 -n n800_port_py3_epang_T8_catinfo_rep1 -S -tmpdir /tmp/sativa_speedup_bench/tmp/n800_port_py3_epang_T8_catinfo_rep1 -c /tmp/sativa_speedup_bench/work/n800_port_py3_epang_T8_catinfo_rep1/sativa_override.cfg
+./sativa_epang/sativa.py -s n800.fasta -t n800.tax -m ultrafast -C 0.4 -x BOT -T 8 -p 42 -n n800_port_py3_epang_T8_catinfo_rep1 -S -tmpdir $SCRATCH/tmp/n800_port_py3_epang_T8_catinfo_rep1 -c $SCRATCH/work/n800_port_py3_epang_T8_catinfo_rep1/sativa_override.cfg
 
 *** STEP 1: Building the reference tree using provided alignment and taxonomic annotations ***
 
@@ -83,7 +83,7 @@ WARNING: 15 indistinguishable taxa have been merged into 7 clusters.
 
 Running the leave-one-sequence-out test...
 
-[epang-l1o] EPA-ng model: /tmp/sativa_speedup_bench/tmp/n800_port_py3_epang_T8_catinfo_rep1/n800_port_py3_epang_T8_catinfo_rep1_1787068862751/RAxML_info.mfresolv_n800_port_py3_epang_T8_catinfo_rep1
+[epang-l1o] EPA-ng model: $SCRATCH/tmp/n800_port_py3_epang_T8_catinfo_rep1/n800_port_py3_epang_T8_catinfo_rep1_1787068862751/RAxML_info.mfresolv_n800_port_py3_epang_T8_catinfo_rep1
 [epang-l1o] placements produits: 800 (K=5 folds)
 Leave-one-out test identified 70 suspicious sequences; running final EPA test to check them...
 
@@ -98,8 +98,8 @@ Species     :	22
 
 Total mislabels: 47 / 5.88 %
 
-Results were saved to: /tmp/sativa_speedup_bench/work/n800_port_py3_epang_T8_catinfo_rep1/n800_port_py3_epang_T8_catinfo_rep1.mis
-Execution log was saved to: /tmp/sativa_speedup_bench/work/n800_port_py3_epang_T8_catinfo_rep1/n800_port_py3_epang_T8_catinfo_rep1.log
+Results were saved to: $SCRATCH/work/n800_port_py3_epang_T8_catinfo_rep1/n800_port_py3_epang_T8_catinfo_rep1.mis
+Execution log was saved to: $SCRATCH/work/n800_port_py3_epang_T8_catinfo_rep1/n800_port_py3_epang_T8_catinfo_rep1.log
 
 Analysis completed successfully, elapsed time: 5 seconds (1s reftree, 4s leave-one-out)
 

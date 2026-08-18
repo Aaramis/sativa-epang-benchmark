@@ -29,15 +29,15 @@ Wall clock, median of the replicates.
 | n | upstream, 1 thread | upstream, 8 threads | EPA-ng K=5, 1 thread | EPA-ng K=5, 8 threads | EPA-ng K=5, 16 threads |
 |---|---|---|---|---|---|
 | 400 | 35.9 s | 26.9 s | 5.5 s | 3.3 s | 3.3 s |
-| 800 | 109.0 s | 111.6 s | 12.0 s | 5.6 s | 5.5 s |
-| 1600 | 257.4 s | 214.1 s | 34.8 s | 12.7 s | 11.7 s |
-| 5402 | 1536 s | 1157 s | 723 s | 129 s | 87 s |
+| 800 | 109.0 s | 111.6 s | 12.6 s | 6.5 s | 5.5 s |
+| 1600 | 257.4 s | 214.1 s | 35.1 s | 15.4 s | 11.7 s |
+| 5402 | 1536 s | 1157 s | 720 s | 132 s | 87 s |
 
 **Threads buy RAxML little here.** At n=800, 1 thread gives 109.0 s (108.8 to 111.6 over
 three replicates) and 8 threads 111.6 s (111.5 to 112.6); at n=5402, 1536 s against 1157 s,
 a gain of 25 % for eight times the cores. RAxML PTHREADS splits work over alignment
 columns, and 242 columns leave little to split. EPA-ng parallelises over queries and scales
-close to linearly, 723 s to 87 s on 16 threads at n=5402.
+close to linearly, 720 s to 87 s on 16 threads at n=5402.
 
 **The ratio at 1 thread shrinks with size**, from 6.5x at n=400 to 2.1x at n=5402. This is
 not EPA-ng slowing down, it is SATIVA switching to cheaper approximations: above 500 taxa
@@ -59,16 +59,15 @@ sides.
 
 | n | K=5 recall / precision | K=25 recall / precision |
 |---|---|---|
-| 200 | 0.909 / 0.625 | 1.000 / 0.917 |
 | 400 | 0.833 / 0.909 | 0.875 / 1.000 |
-| 800 | 0.833 / 0.851 | 0.958 / 0.939 |
-| 1600 | 0.839 / 0.756 | 0.898 / 0.855 |
-| 5402 | 0.783 / 0.753 | 0.793 / 0.800 |
+| 800 | 0.875 / 0.840 | 0.979 / 0.904 |
+| 1600 | 0.847 / 0.752 | 0.898 / 0.855 |
+| 5402 | 0.807 / 0.737 | 0.849 / 0.778 |
 
 The number of folds is the only approximation in the modification. K=5 prunes a fifth of
 the tree per fold, K=25 a twenty fifth. Raising K is what closes most of the gap, and it
 costs a constant factor of about 2.7 in time, which keeps a 6x to 7x advantage over RAxML
-at every size (n=800: 16.4 s against 109 s; n=5402: 245 s against 1536 s).
+at every size (n=800: 17.7 s against 109 s; n=5402: 271 s against 1536 s).
 
 ### The scale to read those numbers against
 
@@ -80,7 +79,7 @@ python 3 with GTRCAT.
 | upstream, 8 threads instead of 1 | 1.000 | 0.980 |
 | upstream, GTRGAMMA instead of GTRCAT | 0.917 | 0.898 |
 | upstream, last python 2 commit | 0.875 | 0.857 |
-| EPA-ng version, K=25 | 0.958 | 0.939 |
+| EPA-ng version, K=25 | 0.979 | 0.904 |
 
 At n=1600 the python 2 build gives 0.814 / 0.733. Changing the placement engine moves
 fewer calls than changing SATIVA's own model, and far fewer than the difference between
@@ -94,13 +93,13 @@ Same runs, both sides filtered at a stricter cutoff, K=25. Panel C of the figure
 
 | cutoff | n=400 | n=800 | n=1600 | n=5402 |
 |---|---|---|---|---|
-| C >= 0.4 | 0.875 / 1.000 | 0.958 / 0.939 | 0.898 / 0.855 | 0.793 / 0.800 |
-| C >= 0.9 | 0.833 / 0.769 | 1.000 / 0.737 | 0.833 / 0.923 | 0.718 / 0.710 |
+| C >= 0.4 | 0.875 / 1.000 | 0.979 / 0.904 | 0.898 / 0.855 | 0.849 / 0.778 |
+| C >= 0.9 | 0.833 / 0.769 | 0.929 / 0.765 | 0.861 / 0.912 | 0.807 / 0.710 |
 
 Recall and precision, against unmodified SATIVA.
 
-Raising the cutoff does not make the two versions converge. It helps where the two already
-mostly agree (recall reaches 1.000 at n=800, precision 0.923 at n=1600) and not at 5402.
+Raising the cutoff does not make the two versions converge. It buys precision at n=1600
+(0.855 to 0.912) and costs recall everywhere else.
 
 Confidence is a poor predictor of reproducibility, except at the very bottom. Reference
 calls pooled over all sizes, and how often the EPA-ng version reproduces them at the same
@@ -108,13 +107,13 @@ rank:
 
 | reference confidence | calls | reproduced, K=5 | reproduced, K=25 |
 |---|---|---|---|
-| 0.40 to 0.50 | 39 | 0.49 | 0.64 |
-| 0.50 to 0.70 | 121 | 0.81 | 0.79 |
-| 0.70 to 0.90 | 146 | 0.78 | 0.86 |
-| 0.90 to 1.00 | 482 | 0.73 | 0.78 |
+| 0.40 to 0.50 | 39 | 0.46 | 0.69 |
+| 0.50 to 0.70 | 121 | 0.84 | 0.82 |
+| 0.70 to 0.90 | 146 | 0.77 | 0.77 |
+| 0.90 to 1.00 | 482 | 0.79 | 0.83 |
 
 Only the 0.40 to 0.50 band stands out, and it is 39 calls out of 788. Above 0.5 the rate is
-flat: a call at 0.95 is no more likely to be reproduced than a call at 0.6. So the
+flat: a call at 0.95 is about as likely to be reproduced as a call at 0.6. So the
 disagreements are not low confidence noise that a stricter cutoff would remove.
 
 ## Injected mislabels: where the k-fold wins
@@ -156,14 +155,22 @@ loses 0 to 0.2 % of the likelihood weight over five folds.
 **Not the model switch.** Pinning the reference to GTRGAMMA does not bring the two engines
 closer.
 
-**An unfitted alpha, worth fixing anyway.** Above 500 taxa the `RAxML_info` file handed to
-EPA-ng comes from a GTRCAT run, where `alpha: 1.000000` is a placeholder, since CAT fits no
-gamma shape. EPA-ng takes it at face value and reports
+**An unfitted alpha. Found, and fixed.** Above 500 taxa the `RAxML_info` file handed to
+EPA-ng came from a GTRCAT run, where `alpha: 1.000000` is a placeholder, since CAT fits no
+gamma shape. EPA-ng took it at face value and reported
 `Rate heterogeneity: GAMMA (4 cats, mean), alpha: 1 (user)`. The fitted value on this
-alignment is 1.642. Building the reference tree under GTRGAMMA puts a real alpha in the
-file. The effect is modest and mostly absorbed by raising K: recall goes from 0.833 to
-0.875 at n=800 with K=5, from 0.958 to 0.979 with K=25, and is unchanged at n=1600 with
-K=25. The reference tree step costs 12 s at n=5402, so the fix is close to free.
+alignment is 1.642. `sativa.cfg` now builds the reference tree under GTRGAMMA, which puts a
+real alpha in the file. Every number in this report is measured with the fix; the
+`*_catinfo` conditions keep the previous behaviour for comparison:
+
+| n | before, K=5 | after, K=5 | before, K=25 | after, K=25 |
+|---|---|---|---|---|
+| 800 | 0.833 / 0.851 | 0.875 / 0.840 | 0.958 / 0.939 | 0.979 / 0.904 |
+| 1600 | 0.873 / 0.763 | 0.847 / 0.752 | 0.898 / 0.855 | 0.898 / 0.855 |
+| 5402 | 0.783 / 0.753 | 0.807 / 0.737 | 0.793 / 0.800 | 0.849 / 0.778 |
+
+Recall improves at 800 and 5402, precision gives a little back, and 1600 does not move. The
+reference tree step costs 12 s instead of 7 s at n=5402, so the fix is close to free.
 
 What is left sits on the decision boundary. At n=400 even the strict leave one out misses
 two of the reference's 24 calls: the pair of *Bouteloua curtipendula* sequences, flagged at
