@@ -37,10 +37,18 @@ results/
   runs_injected/                         the same, for the injected mislabel test
   summary.tsv                            one row per condition and size
   concordance.tsv                        per sequence agreement
-  concordance_details.tsv                one row per disagreeing sequence
-  concordance_vs_gamma*.tsv              the same, against the GTRGAMMA pinned reference
+  concordance_vs_gamma.tsv               the same, against the GTRGAMMA pinned reference
   figures/fig_sativa_speedup.{png,pdf}   the figure in RESULTS.md
-  report.html                            the report as a standalone page
+```
+
+Tracked in git: the measured runs and the small tables, because they are the evidence and
+cost three hours of compute to produce. Not tracked, because a script rebuilds them in
+seconds from the runs: `concordance_details.tsv`, `concordance_vs_gamma_details.tsv`,
+`report.html`, and the `stdout.log` of each run, which duplicates SATIVA's own log.
+
+```bash
+"$PY3" scripts/05_concordance.py --details   # the details tables
+"$PLOT_PY" scripts/08_build_report.py        # results/report.html
 ```
 
 `env/` and the compiled RAxML binaries are gitignored: both are rebuilt by the setup steps

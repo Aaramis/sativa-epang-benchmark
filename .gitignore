@@ -5,3 +5,9 @@ __pycache__/
 sativa_epang/raxml/raxmlHPC8-*
 results/figures/_web.png
 config.local.sh
+
+# Derived from results/runs, regenerated in seconds by the scripts, so kept out of git:
+results/report.html
+results/concordance_details.tsv
+results/concordance_vs_gamma_details.tsv
+results/**/stdout.log

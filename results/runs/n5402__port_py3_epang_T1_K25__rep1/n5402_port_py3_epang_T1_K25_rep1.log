@@ -3,7 +3,7 @@ By A.Kozlov and J.Zhang, the Exelixis Lab. Based on RAxML 8.2.3 by A.Stamatakis.
 
 SATIVA was called as follows:
 
-sativa.py -s n5402.fasta -t n5402.tax -m ultrafast -C 0.4 -x BOT -T 1 -p 42 -n n5402_port_py3_epang_T1_K25_rep1 -S -tmpdir $SCRATCH/tmp/n5402_port_py3_epang_T1_K25_rep1
+/pools/apollon/ummisco/home/agardette/augmentation_taxonomie/augmentation_taxonomie/18.sativa_speedup/sativa_epang/sativa.py -s n5402.fasta -t n5402.tax -m ultrafast -C 0.4 -x BOT -T 1 -p 42 -n n5402_port_py3_epang_T1_K25_rep1 -S -tmpdir /tmp/sativa_speedup_bench/tmp/n5402_port_py3_epang_T1_K25_rep1
 
 *** STEP 1: Building the reference tree using provided alignment and taxonomic annotations ***
 
@@ -208,25 +208,25 @@ WARNING: 65 indistinguishable taxa have been merged into 22 clusters.
 
 Running the leave-one-sequence-out test...
 
-[epang-l1o] EPA-ng model: $SCRATCH/tmp/n5402_port_py3_epang_T1_K25_rep1/n5402_port_py3_epang_T1_K25_rep1_1787060512131/RAxML_info.mfresolv_n5402_port_py3_epang_T1_K25_rep1
+[epang-l1o] EPA-ng model: /tmp/sativa_speedup_bench/tmp/n5402_port_py3_epang_T1_K25_rep1/n5402_port_py3_epang_T1_K25_rep1_1787067628951/RAxML_info.mfresolv_n5402_port_py3_epang_T1_K25_rep1
 [epang-l1o] placements produits: 5402 (K=25 folds)
-Leave-one-out test identified 734 suspicious sequences; running final EPA test to check them...
+Leave-one-out test identified 773 suspicious sequences; running final EPA test to check them...
 
-[epang-final] 734 suspects re-placed (model RAxML_info.mfresolv_n5402_port_py3_epang_T1_K25_rep1)
+[epang-final] 773 suspects re-placed (model RAxML_info.mfresolv_n5402_port_py3_epang_T1_K25_rep1)
 Mislabeled sequences by rank:
 Kingdom     :	27
-Phylum      :	38
-Order       :	29
+Phylum      :	102
+Order       :	39
 Infraorder  :	2
 Superfamily :	1
-Family      :	29
-Genus       :	42
+Family      :	26
+Genus       :	35
 Species     :	402
 
-Total mislabels: 570 / 10.55 %
+Total mislabels: 634 / 11.74 %
 
-Results were saved to: $SCRATCH/work/n5402_port_py3_epang_T1_K25_rep1/n5402_port_py3_epang_T1_K25_rep1.mis
-Execution log was saved to: $SCRATCH/work/n5402_port_py3_epang_T1_K25_rep1/n5402_port_py3_epang_T1_K25_rep1.log
+Results were saved to: /tmp/sativa_speedup_bench/work/n5402_port_py3_epang_T1_K25_rep1/n5402_port_py3_epang_T1_K25_rep1.mis
+Execution log was saved to: /tmp/sativa_speedup_bench/work/n5402_port_py3_epang_T1_K25_rep1/n5402_port_py3_epang_T1_K25_rep1.log
 
-Analysis completed successfully, elapsed time: 988 seconds (12s reftree, 975s leave-one-out)
+Analysis completed successfully, elapsed time: 939 seconds (21s reftree, 918s leave-one-out)
 
