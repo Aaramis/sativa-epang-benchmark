@@ -43,7 +43,7 @@ AGREEMENT_ROWS = [
 ]
 CONTROL_ROW = "upstream_py2_raxml_T1"       # unmodified SATIVA, python-2 build
 
-TITLE = "The leave-one-out is the whole cost — and the whole speed-up"
+TITLE = "The leave-one-out is the whole cost, and the whole speed-up"
 
 # "Original" is upstream v0.9.3 itself -- the code ours is a three-hunk diff against --
 # so the labels name it rather than saying "original", which invites the wrong baseline.
@@ -340,7 +340,7 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
                 "(coloured) and, inside \"other steps\", the final confirmation pass.")
     footer = ("Medians of the replicates (spread in summary.tsv). Every run works on local disk: on the "
               "project's network filesystem the I/O dominates and adds several-fold noise. Panel A starts at "
-              f"{smallest} sequences and panel B follows it - below ~400, SATIVA's whole-second phase timer "
+              f"{smallest} sequences and panel B follows it. Below about 400, SATIVA's whole-second phase timer "
               "cannot resolve the split, and the smaller sizes stay in summary.tsv and concordance.tsv. "
               "In panel B the k-fold leave-one-out is an approximation of the per-sequence one, so it drops and "
               "adds a few flags.")
@@ -351,7 +351,7 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
               "over each panel: past 500 taxa SATIVA drops its own RAxML from GTRGAMMA to GTRCAT, and past 1000 "
               "taxa it thoroughly places on a fraction of the branches only, while EPA-ng keeps the full "
               "computation everywhere. From n=800 on, the orange bar is a cheaper approximation rather than the "
-              "same work done faster — which is why the ratio stops growing, and why at 5 402 sequences the "
+              "same work done faster. That is why the ratio stops growing, and why at 5 402 sequences the "
               "speed-up comes from threads: EPA-ng parallelises over queries, RAxML over 242 alignment columns, "
               "where there is nothing to split.")
     note_c = (f"The same comparison with both sides filtered at confidence >= {strict_cutoff:g}, the regime a "
@@ -363,9 +363,9 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
               "The injected-mislabel test in RESULTS.md shows that a fold removing several sequences at once "
               "catches duplicated wrong labels a strict leave-one-out cannot see.")
     note_b = ("Each row: the EPA-ng version against unmodified SATIVA v0.9.3, sequence by sequence, on the same "
-              "alignment. K is the number of folds the leave-one-out is split into — the only approximation in "
+              "alignment. K is the number of folds the leave-one-out is split into, the only approximation in "
               "the modification, and the knob that closes most of the gap: K=5 prunes a fifth of the tree per "
-              "fold, K=25 a twenty-fifth. Nothing here is run-to-run noise — at a fixed seed the replicates give identical calls "
+              "fold, K=25 a twenty-fifth. Nothing here is run-to-run noise: at a fixed seed the replicates give identical calls "
               "(33/33 conditions). For scale, upstream's own python-3 port moves 3 calls out of 24 at n=400 "
               "against its last python-2 commit; see concordance.tsv.")
     subtitle_lines = wrap(subtitle, width - 0.2, 9.2)
@@ -443,9 +443,9 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
 
     fig.legend(handles=[
         Patch(facecolor=RESIDUAL, label="other SATIVA steps (bookkeeping, rounding)"),
-        Patch(facecolor=SHARED, label="reference tree (RAxML) — identical everywhere"),
-        Patch(facecolor=ORANGE, label="leave-one-out — RAxML -f O"),
-        Patch(facecolor=AQUA, label="leave-one-out — EPA-ng"),
+        Patch(facecolor=SHARED, label="reference tree (RAxML), identical everywhere"),
+        Patch(facecolor=ORANGE, label="leave-one-out: RAxML -f O"),
+        Patch(facecolor=AQUA, label="leave-one-out: EPA-ng"),
     ], loc="upper left", bbox_to_anchor=(left_frac, y_of("legend_a")), frameon=False,
         fontsize=8.5, ncol=legend_cols, labelcolor=INK, handlelength=1.1,
         handleheight=1.1, columnspacing=1.6, borderaxespad=0)
