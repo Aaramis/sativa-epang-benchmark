@@ -1,0 +1,33 @@
+{
+  "dataset": "n1600",
+  "n_seqs": 1600,
+  "aln_len": 242,
+  "condition": "port_py3_epang_T8_catinfo",
+  "rep": 1,
+  "impl": "port",
+  "engine": "epang",
+  "threads": 8,
+  "folds": null,
+  "env_overrides": {},
+  "cfg_overrides": {
+    "raxml_model": "GTRCAT"
+  },
+  "started_at": "2026-08-18T18:01:24",
+  "host": "cng5-5bccfdbfcd-kmcgx",
+  "command": "/pools/apollon/ummisco/home/agardette/augmentation_taxonomie/augmentation_taxonomie/11.CurateMake/.snakemake/conda/37eacd3aeb84d655f644c7b154111449_/bin/python /pools/apollon/ummisco/home/agardette/augmentation_taxonomie/augmentation_taxonomie/18.sativa_speedup/sativa_epang/sativa.py -s n1600.fasta -t n1600.tax -m ultrafast -C 0.4 -x BOT -T 8 -p 42 -n n1600_port_py3_epang_T8_catinfo_rep1 -S -tmpdir /tmp/sativa_speedup_bench/tmp/n1600_port_py3_epang_T8_catinfo_rep1 -c /tmp/sativa_speedup_bench/work/n1600_port_py3_epang_T8_catinfo_rep1/sativa_override.cfg",
+  "timeout_sec": 10800.0,
+  "scratch": "/tmp/sativa_speedup_bench",
+  "timing_trusted": false,
+  "cpus": null,
+  "n_mislabels": 135,
+  "wall_sec": 12.64,
+  "returncode": 0,
+  "timed_out": false,
+  "max_rss_mb": 884.9,
+  "user_cpu_sec": 42.32,
+  "sys_cpu_sec": 2.05,
+  "sativa_total_sec": 12.0,
+  "reftree_sec": 2.0,
+  "l1out_sec": 10.0,
+  "status": "ok"
+}

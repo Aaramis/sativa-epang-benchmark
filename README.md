@@ -17,7 +17,8 @@ sequences:
   which a strict leave-one-out cannot see and a fold can.
 
 **Results and interpretation: [`RESULTS.md`](RESULTS.md).** The code: [`sativa_epang/`](sativa_epang/),
-also published as a branch on a fork of `amkozlov/sativa`. The rest of this file says what
+also on the `epa-ng` branch of [Aaramis/sativa](https://github.com/Aaramis/sativa/tree/epa-ng),
+a fork of `amkozlov/sativa`, where the whole modification reads as one diff. The rest of this file says what
 is here and how to run it.
 
 SATIVA is Kozlov et al. 2016; EPA-ng is Barbera et al. 2019. This work is a benchmark of a

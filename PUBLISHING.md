@@ -7,7 +7,7 @@ Everything below is prepared. Nothing is public until you push.
 **`sativa-epang-benchmark`** (this folder). Already a git repository with one commit.
 
 ```bash
-git remote add origin git@github.com:<you>/sativa-epang-benchmark.git
+git remote add origin git@github.com:Aaramis/sativa-epang-benchmark.git
 git push -u origin main
 ```
 
@@ -15,7 +15,7 @@ git push -u origin main
 
 ```bash
 cd ../sativa-epang
-git remote add fork git@github.com:<you>/sativa.git
+git remote add fork git@github.com:Aaramis/sativa.git
 git push fork epa-ng
 ```
 
@@ -24,8 +24,8 @@ modification as a single readable diff: two hunks in `sativa.py`, one in `epac/c
 one new `epac/epang_l1o.py`, one config line. `CHANGES-epa-ng.md` at the root of the branch
 explains it and links back to this benchmark.
 
-If your GitHub handle is not `agardette`, fix the two links: `CHANGES-epa-ng.md` in the
-fork, and the "the code" line in this folder's `README.md`.
+Both repositories belong to https://github.com/Aaramis, and `CHANGES-epa-ng.md` in the fork
+already links back to `Aaramis/sativa-epang-benchmark`.
 
 ## Check before making them public
 
