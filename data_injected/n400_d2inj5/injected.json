@@ -1,0 +1,11 @@
+{
+  "injected": [
+    "33df7506-e1fe-4f35-8fff-fdfb50ae46c6",
+    "478a9ed7-75d6-49a2-bc83-9a7d9a5c7041",
+    "8aa58146-daf4-4ef1-aadd-07a8e5a7ea35",
+    "a44173ad-f344-44ba-90eb-136d7f9ba7cf",
+    "a539ec80-aee3-40fa-ba98-53073fa6a901"
+  ],
+  "donor": "Fungi;Basidiomycota;NA;Russulales;Russulaceae;Russula;Russula azurea",
+  "wrong_label": "Fungi;Ascomycota;NA;Pleosporales;Pleosporaceae;Bipolaris;Bipolaris bicolor"
+}

@@ -1,0 +1,7 @@
+env/
+__pycache__/
+*.pyc
+.nfs*
+sativa_epang/raxml/raxmlHPC8-*
+results/figures/_web.png
+config.local.sh

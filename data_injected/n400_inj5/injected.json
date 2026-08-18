@@ -1,0 +1,11 @@
+{
+  "injected": [
+    "16538826-edd6-4991-9851-c15b98fb1fd2",
+    "3742a708-c945-4a8b-acb2-9ba819476f01",
+    "45fc20bf-e81e-4cda-bdf1-b58e5aa23010",
+    "b8be465f-fbe9-4f04-b5a5-10c911a68e35",
+    "ba8293ea-6756-492b-a900-f87679454456"
+  ],
+  "donor": "Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA",
+  "wrong_label": "Fungi;Ascomycota;NA;Pleosporales;Pleosporaceae;Bipolaris;Bipolaris bicolor"
+}

@@ -1,0 +1,31 @@
+{
+  "dataset": "n200",
+  "n_seqs": 200,
+  "aln_len": 242,
+  "condition": "port_py3_epang_T8_noheur",
+  "rep": 1,
+  "impl": "port",
+  "engine": "epang",
+  "threads": 8,
+  "folds": null,
+  "env_overrides": {
+    "CURATEMAKE_EPANG_HEUR": "off"
+  },
+  "started_at": "2026-08-18T13:21:47",
+  "host": "cng5-5bccfdbfcd-kmcgx",
+  "command": "$PY3 sativa.py -s n200.fasta -t n200.tax -m ultrafast -C 0.4 -x BOT -T 8 -p 42 -n n200_port_py3_epang_T8_noheur_rep1 -S -tmpdir $SCRATCH/tmp/n200_port_py3_epang_T8_noheur_rep1",
+  "timeout_sec": 7200.0,
+  "scratch": "$SCRATCH",
+  "timing_trusted": true,
+  "n_mislabels": 15,
+  "wall_sec": 3.12,
+  "returncode": 0,
+  "timed_out": false,
+  "max_rss_mb": 121.7,
+  "user_cpu_sec": 9.93,
+  "sys_cpu_sec": 0.32,
+  "sativa_total_sec": 3.0,
+  "reftree_sec": 0.0,
+  "l1out_sec": 3.0,
+  "status": "ok"
+}

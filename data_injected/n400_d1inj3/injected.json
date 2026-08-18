@@ -1,0 +1,9 @@
+{
+  "injected": [
+    "2d9ee6d5-e80c-4699-b367-c4f4f8ab7344",
+    "c7fc389a-ddac-42ec-b96f-15d8ad6ff335",
+    "d46e61d2-bbaa-4b06-b46b-6da8a3063df3"
+  ],
+  "donor": "Fungi;Basidiomycota;NA;Russulales;Russulaceae;Russula;Russula alutacea",
+  "wrong_label": "Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA"
+}

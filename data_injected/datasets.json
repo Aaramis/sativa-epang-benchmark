@@ -1,0 +1,102 @@
+{
+  "source": "./data_ascii/n400",
+  "seed": 42,
+  "datasets": [
+    {
+      "name": "n400_inj1",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_inj1/n400_inj1.fasta",
+      "tax": "./data_injected/n400_inj1/n400_inj1.tax",
+      "k_injected": 1
+    },
+    {
+      "name": "n400_inj2",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_inj2/n400_inj2.fasta",
+      "tax": "./data_injected/n400_inj2/n400_inj2.tax",
+      "k_injected": 2
+    },
+    {
+      "name": "n400_inj3",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_inj3/n400_inj3.fasta",
+      "tax": "./data_injected/n400_inj3/n400_inj3.tax",
+      "k_injected": 3
+    },
+    {
+      "name": "n400_inj5",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_inj5/n400_inj5.fasta",
+      "tax": "./data_injected/n400_inj5/n400_inj5.tax",
+      "k_injected": 5
+    },
+    {
+      "name": "n400_d1inj1",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d1inj1/n400_d1inj1.fasta",
+      "tax": "./data_injected/n400_d1inj1/n400_d1inj1.tax",
+      "k_injected": 1
+    },
+    {
+      "name": "n400_d1inj2",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d1inj2/n400_d1inj2.fasta",
+      "tax": "./data_injected/n400_d1inj2/n400_d1inj2.tax",
+      "k_injected": 2
+    },
+    {
+      "name": "n400_d1inj3",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d1inj3/n400_d1inj3.fasta",
+      "tax": "./data_injected/n400_d1inj3/n400_d1inj3.tax",
+      "k_injected": 3
+    },
+    {
+      "name": "n400_d1inj5",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d1inj5/n400_d1inj5.fasta",
+      "tax": "./data_injected/n400_d1inj5/n400_d1inj5.tax",
+      "k_injected": 5
+    },
+    {
+      "name": "n400_d2inj1",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d2inj1/n400_d2inj1.fasta",
+      "tax": "./data_injected/n400_d2inj1/n400_d2inj1.tax",
+      "k_injected": 1
+    },
+    {
+      "name": "n400_d2inj2",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d2inj2/n400_d2inj2.fasta",
+      "tax": "./data_injected/n400_d2inj2/n400_d2inj2.tax",
+      "k_injected": 2
+    },
+    {
+      "name": "n400_d2inj3",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d2inj3/n400_d2inj3.fasta",
+      "tax": "./data_injected/n400_d2inj3/n400_d2inj3.tax",
+      "k_injected": 3
+    },
+    {
+      "name": "n400_d2inj5",
+      "n_seqs": 400,
+      "aln_len": 0,
+      "fasta": "./data_injected/n400_d2inj5/n400_d2inj5.fasta",
+      "tax": "./data_injected/n400_d2inj5/n400_d2inj5.tax",
+      "k_injected": 5
+    }
+  ]
+}

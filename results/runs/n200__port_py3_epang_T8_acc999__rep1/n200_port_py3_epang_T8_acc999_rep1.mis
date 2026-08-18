@@ -1,0 +1,21 @@
+;WARNING: The revised taxon name suggested here is not necessarily the one that has priority in nomenclature. 
+;Our suggestion should only be taken as indicative of an affiliation to the same group, whose correct name must be determined 
+;in an additional step according to the specific rules of nomenclature that apply to the studied organisms.
+;
+;SeqID	MislabeledLevel	OriginalLabel	ProposedLabel	Confidence	OriginalTaxonomyPath	ProposedTaxonomyPath	PerRankConfidence
+752acb34-3ecd-4f4e-ae33-10382d60c91c	Kingdom	Fungi	Plantae	1.000	Fungi;Zoopagomycota;NA	Plantae;Chlorophyta;NA	1.000;0.994;0.994
+65dcaeab-cbf1-4326-8e51-a13c527420c9	Kingdom	Plantae	Fungi	1.000	Plantae;Tracheophyta;NA;Poales;Cyperaceae;Carex;Carex alba	Fungi;Basidiomycota;NA;Russulales;Russulaceae;Russula;Russula rhodocephala	1.000;1.000;1.000;1.000;1.000;1.000;0.930
+30f29226-ecc3-44e2-bccb-c21733906535	Kingdom	Fungi	Plantae	0.756	Fungi;Zoopagomycota;NA	Plantae;Chlorophyta;NA	0.756;0.748;0.748
+2e188f33-6f0e-4045-8d86-40a13f23616f	Phylum	NA	Ascomycota	1.000	Fungi;NA;NA;NA;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;1.000;1.000;1.000;1.000
+a978ee1b-d8d2-49a6-a534-b823abf82774	Phylum	NA	Ascomycota	1.000	Fungi;NA;NA;NA;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;1.000;1.000;1.000;1.000
+ab24a6f7-938e-4292-ba70-41a7aab91d5a	Phylum	NA	Basidiomycota	0.999	Fungi;NA;NA;NA;NA;NA;NA	Fungi;Basidiomycota;NA;Russulales;Russulaceae;Russula	0.999;0.999;0.999;0.996;0.933;0.933
+016fe383-b099-4998-a909-45dae9f9af74	Phylum	Chlorophyta	Tracheophyta	0.999	Plantae;Chlorophyta;NA	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Epilasia;Epilasia mirabilis	0.999;0.999;0.999;0.997;0.997;0.508;0.508
+1843d5a8-d171-4269-bab8-3b107f9fe3f7	Phylum	Tracheophyta	Chlorophyta	0.477	Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex	Plantae;Chlorophyta;NA	0.999;0.477;0.477
+4fdc2d5c-fe5d-4273-908e-6785b6f69cb7	Family	NA	Aspergillaceae	1.000	Fungi;Ascomycota;NA;Eurotiales;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;1.000;1.000;1.000;1.000
+4568e7be-c716-4883-94c0-e9c52330f6f0	Family	NA	Aspergillaceae	1.000	Fungi;Ascomycota;NA;Eurotiales;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;1.000;1.000;1.000;1.000
+4c025ab0-bd8b-4d8b-ba56-b584532b227b	Genus	Scorzonera	Epilasia	0.510	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Scorzonera	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Epilasia;Epilasia mirabilis	1.000;1.000;1.000;1.000;1.000;0.510;0.510
+381fe2c2-6601-4da5-b77f-d0742d89e4c3	Genus	Scorzonera	Koelpinia	0.497	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Scorzonera	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Koelpinia;Koelpinia macrantha	1.000;1.000;1.000;1.000;1.000;0.497;0.497
+a83cac52-a3f0-4c71-9759-fe7f2b6e1f34	Species	Carex adrienii	Carex arcta	0.942	Plantae;Tracheophyta;NA;Poales;Cyperaceae;Carex;Carex adrienii	Plantae;Tracheophyta;NA;Poales;Cyperaceae;Carex;Carex arcta	0.999;0.999;0.999;0.999;0.999;0.999;0.942
+08d89977-f354-41e3-a1e1-75ef3c40b952	Species	Carex adrienii	Carex arcta	0.533	Plantae;Tracheophyta;NA;Poales;Cyperaceae;Carex;Carex adrienii	Plantae;Tracheophyta;NA;Poales;Cyperaceae;Carex;Carex arcta	0.999;0.999;0.999;0.999;0.987;0.987;0.533
+91a68433-01a4-4e03-9d8c-866f43a43484	Species	Ilex pubescens	Ilex venusta	0.500	Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex pubescens	Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex venusta	1.000;1.000;1.000;0.510;0.510;0.510;0.500
+483fb91b-bd29-4d0b-a185-eca82eb41336	Species	NA	Bipolaris sorokiniana	0.419	Fungi;Ascomycota;NA;Pleosporales;Pleosporaceae;Bipolaris;NA	Fungi;Ascomycota;NA;Pleosporales;Pleosporaceae;Bipolaris;Bipolaris sorokiniana	0.999;0.999;0.999;0.999;0.999;0.999;0.419

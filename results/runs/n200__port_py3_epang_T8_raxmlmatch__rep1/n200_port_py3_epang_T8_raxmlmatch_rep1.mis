@@ -1,0 +1,16 @@
+;WARNING: The revised taxon name suggested here is not necessarily the one that has priority in nomenclature. 
+;Our suggestion should only be taken as indicative of an affiliation to the same group, whose correct name must be determined 
+;in an additional step according to the specific rules of nomenclature that apply to the studied organisms.
+;
+;SeqID	MislabeledLevel	OriginalLabel	ProposedLabel	Confidence	OriginalTaxonomyPath	ProposedTaxonomyPath	PerRankConfidence
+1843d5a8-d171-4269-bab8-3b107f9fe3f7	Kingdom	Plantae	Fungi	1.000	Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.509;0.509;0.509;0.509
+65dcaeab-cbf1-4326-8e51-a13c527420c9	Kingdom	Plantae	Fungi	1.000	Plantae;Tracheophyta;NA;Poales;Cyperaceae;Carex;Carex alba	Fungi;Ascomycota;NA	1.000;1.000;1.000
+016fe383-b099-4998-a909-45dae9f9af74	Kingdom	Plantae	Fungi	1.000	Plantae;Chlorophyta;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.510;0.510;0.510;0.510
+a978ee1b-d8d2-49a6-a534-b823abf82774	Phylum	NA	Ascomycota	1.000	Fungi;NA;NA;NA;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.510;0.510;0.510;0.510
+2e188f33-6f0e-4045-8d86-40a13f23616f	Phylum	NA	Ascomycota	1.000	Fungi;NA;NA;NA;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.510;0.510;0.510;0.510
+ab24a6f7-938e-4292-ba70-41a7aab91d5a	Phylum	NA	Ascomycota	1.000	Fungi;NA;NA;NA;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.510;0.510;0.510;0.510
+4568e7be-c716-4883-94c0-e9c52330f6f0	Family	NA	Aspergillaceae	0.510	Fungi;Ascomycota;NA;Eurotiales;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.510;0.510;0.510;0.510
+4fdc2d5c-fe5d-4273-908e-6785b6f69cb7	Family	NA	Aspergillaceae	0.510	Fungi;Ascomycota;NA;Eurotiales;NA;NA;NA	Fungi;Ascomycota;NA;Eurotiales;Aspergillaceae;Aspergillus;NA	1.000;1.000;1.000;0.510;0.510;0.510;0.510
+4c025ab0-bd8b-4d8b-ba56-b584532b227b	Genus	Scorzonera	Epilasia	0.510	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Scorzonera	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Epilasia;Epilasia mirabilis	1.000;1.000;1.000;1.000;1.000;0.510;0.510
+42a9c432-23cb-47a3-b43b-99f3dfa459d2	Genus	Scorzonera	Gelasia	0.510	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Scorzonera	Plantae;Tracheophyta;NA;Asterales;Asteraceae;Gelasia;Scorzonera hirsuta	1.000;1.000;1.000;1.000;1.000;0.510;0.510
+91a68433-01a4-4e03-9d8c-866f43a43484	Species	Ilex pubescens	Ilex venusta	0.500	Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex pubescens	Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex venusta	1.000;1.000;1.000;0.510;0.510;0.510;0.500

@@ -1,0 +1,118 @@
+SATIVA v0.9-57-g8a99328, released on 2017-07-15. Last version: https://github.com/amkozlov/sativa 
+By A.Kozlov and J.Zhang, the Exelixis Lab. Based on RAxML 8.2.3 by A.Stamatakis.
+
+SATIVA was called as follows:
+
+./env/sativa_upstream_py2/sativa.py -s n1600.fasta -t n1600.tax -m ultrafast -C 0.4 -x BOT -T 1 -p 42 -n n1600_upstream_py2_raxml_T1_rep1 -S -tmpdir $SCRATCH/tmp/n1600_upstream_py2_raxml_T1_rep1
+
+*** STEP 1: Building the reference tree using provided alignment and taxonomic annotations ***
+
+=> Loading taxonomy from file: n1600.tax ...
+
+==> Loading reference alignment from file: n1600.fasta ...
+
+===> Validating taxonomy and alignment ...
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex zygophylla
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex oppositifolia
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;__TAXCLUSTER1__Ilex zygophylla
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex metabaptista
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex wuiana
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;__TAXCLUSTER2__Ilex metabaptista
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Ericales;Actinidiaceae;Saurauia;Saurauia zahlbruckneri
+Plantae;Tracheophyta;NA;Ericales;Actinidiaceae;Saurauia;Saurauia chaparensis
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Ericales;Actinidiaceae;Saurauia;__TAXCLUSTER6__Saurauia zahlbruckneri
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;Primula forrestii
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;Primula bracteata
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;__TAXCLUSTER8__Primula forrestii
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;Primula cicutariifolia
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;Primula jiugongshanensis
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;__TAXCLUSTER9__Primula cicutariifolia
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex decidua
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex collina
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;__TAXCLUSTER7__Ilex decidua
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex hirsuta
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex perado
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex pentagona
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex memecylifolia
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex sugerokii
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;__TAXCLUSTER4__Ilex hirsuta
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;Primula secundiflora
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;Primula helodoxa
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Ericales;Primulaceae;Primula;__TAXCLUSTER3__Primula secundiflora
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Fungi;Mucoromycota;NA;GS22;NA;NA;NA
+Fungi;Mucoromycota;NA;Endogonales;NA;NA;NA
+For the purpose of mislabels identification, they were merged into one taxon:
+Fungi;Mucoromycota;NA;GS22;NA;NA;__TAXCLUSTER5__NA
+
+WARNING: 21 indistinguishable taxa have been merged into 9 clusters.
+
+====> Building a multifurcating tree from taxonomy with 1600 seqs ...
+
+=====> Building the reference alignment ...
+
+======> Saving the outgroup for later re-rooting ...
+
+=======> Resolving multifurcation: choosing the best topology from 1 independent RAxML runs ...
+
+========> Calling RAxML-EPA to obtain branch labels ...
+
+=========> Post-processing the EPA tree (re-rooting, taxonomic labeling etc.) ...
+
+==========> Saving the reference JSON file: ./n1600_upstream_py2_raxml_T1_rep1.refjson
+
+*** STEP 2: Searching for mislabels ***
+
+Running the leave-one-sequence-out test...
+
+Leave-one-out test identified 204 suspicious sequences; running final EPA test to check them...
+
+Mislabeled sequences by rank:
+Kingdom     :	13
+Phylum      :	9
+Order       :	7
+Family      :	2
+Genus       :	16
+Species     :	84
+
+Total mislabels: 131 / 8.19 %
+
+Results were saved to: $SCRATCH/work/n1600_upstream_py2_raxml_T1_rep1/n1600_upstream_py2_raxml_T1_rep1.mis
+Execution log was saved to: $SCRATCH/work/n1600_upstream_py2_raxml_T1_rep1/n1600_upstream_py2_raxml_T1_rep1.log
+
+Analysis completed successfully, elapsed time: 259 seconds (3s reftree, 256s leave-one-out)
+

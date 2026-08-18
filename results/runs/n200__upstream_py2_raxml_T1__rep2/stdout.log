@@ -1,0 +1,68 @@
+SATIVA v0.9-57-g8a99328, released on 2017-07-15. Last version: https://github.com/amkozlov/sativa 
+By A.Kozlov and J.Zhang, the Exelixis Lab. Based on RAxML 8.2.3 by A.Stamatakis.
+
+SATIVA was called as follows:
+
+./env/sativa_upstream_py2/sativa.py -s n200.fasta -t n200.tax -m ultrafast -C 0.4 -x BOT -T 1 -p 42 -n n200_upstream_py2_raxml_T1_rep2 -S -tmpdir $SCRATCH/tmp/n200_upstream_py2_raxml_T1_rep2
+
+*** STEP 1: Building the reference tree using provided alignment and taxonomic annotations ***
+
+=> Loading taxonomy from file: n200.tax ...
+
+==> Loading reference alignment from file: n200.fasta ...
+
+===> Validating taxonomy and alignment ...
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex x wandoensis
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex shukunii
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;__TAXCLUSTER2__Ilex x wandoensis
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex hirsuta
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex ferruginea
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;Ilex sugerokii
+For the purpose of mislabels identification, they were merged into one taxon:
+Plantae;Tracheophyta;NA;Aquifoliales;Aquifoliaceae;Ilex;__TAXCLUSTER1__Ilex hirsuta
+
+WARNING: 5 indistinguishable taxa have been merged into 2 clusters.
+
+====> Building a multifurcating tree from taxonomy with 200 seqs ...
+
+=====> Building the reference alignment ...
+
+======> Saving the outgroup for later re-rooting ...
+
+=======> Resolving multifurcation: choosing the best topology from 1 independent RAxML runs ...
+
+========> Calling RAxML-EPA to obtain branch labels ...
+
+=========> Post-processing the EPA tree (re-rooting, taxonomic labeling etc.) ...
+
+==========> Saving the reference JSON file: ./n200_upstream_py2_raxml_T1_rep2.refjson
+
+*** STEP 2: Searching for mislabels ***
+
+Running the leave-one-sequence-out test...
+
+Leave-one-out test identified 17 suspicious sequences; running final EPA test to check them...
+
+Mislabeled sequences by rank:
+Kingdom     :	1
+Phylum      :	4
+Order       :	1
+Family      :	2
+Genus       :	2
+Species     :	1
+
+Total mislabels: 11 / 5.50 %
+
+Results were saved to: $SCRATCH/work/n200_upstream_py2_raxml_T1_rep2/n200_upstream_py2_raxml_T1_rep2.mis
+Execution log was saved to: $SCRATCH/work/n200_upstream_py2_raxml_T1_rep2/n200_upstream_py2_raxml_T1_rep2.log
+
+Analysis completed successfully, elapsed time: 9 seconds (1s reftree, 9s leave-one-out)
+
+

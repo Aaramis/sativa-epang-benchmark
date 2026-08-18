@@ -1,0 +1,69 @@
+{
+  "source": "ITS__clustered__0000.fasta",
+  "source_n_seqs": 5402,
+  "seed": 42,
+  "nested": true,
+  "ascii_taxonomy": true,
+  "datasets": [
+    {
+      "name": "n100",
+      "n_seqs": 100,
+      "aln_len": 242,
+      "aln_len_before_gap_trim": 242,
+      "ascii_taxonomy": true,
+      "n_transliterated": 0,
+      "fasta": "data_ascii/n100/n100.fasta",
+      "tax": "data_ascii/n100/n100.tax"
+    },
+    {
+      "name": "n200",
+      "n_seqs": 200,
+      "aln_len": 242,
+      "aln_len_before_gap_trim": 242,
+      "ascii_taxonomy": true,
+      "n_transliterated": 1,
+      "fasta": "data_ascii/n200/n200.fasta",
+      "tax": "data_ascii/n200/n200.tax"
+    },
+    {
+      "name": "n400",
+      "n_seqs": 400,
+      "aln_len": 242,
+      "aln_len_before_gap_trim": 242,
+      "ascii_taxonomy": true,
+      "n_transliterated": 4,
+      "fasta": "data_ascii/n400/n400.fasta",
+      "tax": "data_ascii/n400/n400.tax"
+    },
+    {
+      "name": "n800",
+      "n_seqs": 800,
+      "aln_len": 242,
+      "aln_len_before_gap_trim": 242,
+      "ascii_taxonomy": true,
+      "n_transliterated": 6,
+      "fasta": "data_ascii/n800/n800.fasta",
+      "tax": "data_ascii/n800/n800.tax"
+    },
+    {
+      "name": "n1600",
+      "n_seqs": 1600,
+      "aln_len": 242,
+      "aln_len_before_gap_trim": 242,
+      "ascii_taxonomy": true,
+      "n_transliterated": 13,
+      "fasta": "data_ascii/n1600/n1600.fasta",
+      "tax": "data_ascii/n1600/n1600.tax"
+    },
+    {
+      "name": "n5402",
+      "n_seqs": 5402,
+      "aln_len": 242,
+      "aln_len_before_gap_trim": 242,
+      "ascii_taxonomy": true,
+      "n_transliterated": 45,
+      "fasta": "data_ascii/n5402/n5402.fasta",
+      "tax": "data_ascii/n5402/n5402.tax"
+    }
+  ]
+}

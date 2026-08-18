@@ -1,0 +1,33 @@
+{
+  "dataset": "n800",
+  "n_seqs": 800,
+  "aln_len": 242,
+  "condition": "upstream_py3_raxml_T8_gamma",
+  "rep": 1,
+  "impl": "upstream_py3",
+  "engine": "raxml",
+  "threads": 8,
+  "folds": null,
+  "env_overrides": {},
+  "cfg_overrides": {
+    "raxml_model": "GTRGAMMA",
+    "epa_use_heuristic": "FALSE"
+  },
+  "started_at": "2026-08-18T14:27:26",
+  "host": "cng5-5bccfdbfcd-kmcgx",
+  "command": "$PY3 ./env/sativa_upstream/sativa.py -s n800.fasta -t n800.tax -m ultrafast -C 0.4 -x BOT -T 8 -p 42 -n n800_upstream_py3_raxml_T8_gamma_rep1 -S -tmpdir $SCRATCH/tmp/n800_upstream_py3_raxml_T8_gamma_rep1 -c $SCRATCH/work/n800_upstream_py3_raxml_T8_gamma_rep1/sativa_override.cfg",
+  "timeout_sec": 10800.0,
+  "scratch": "$SCRATCH",
+  "timing_trusted": true,
+  "n_mislabels": 49,
+  "wall_sec": 105.67,
+  "returncode": 0,
+  "timed_out": false,
+  "max_rss_mb": 41.5,
+  "user_cpu_sec": 837.89,
+  "sys_cpu_sec": 0.37,
+  "sativa_total_sec": 106.0,
+  "reftree_sec": 1.0,
+  "l1out_sec": 104.0,
+  "status": "ok"
+}
