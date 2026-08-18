@@ -15,7 +15,7 @@ git push -u origin main
 
 ```bash
 cd ../sativa-epang
-git remote add fork git@github.com:Aaramis/sativa.git
+git remote add fork git@github.com:Aaramis/sativa-epang.git
 git push fork epa-ng
 ```
 

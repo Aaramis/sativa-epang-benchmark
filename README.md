@@ -17,7 +17,7 @@ sequences:
   which a strict leave-one-out cannot see and a fold can.
 
 **Results and interpretation: [`RESULTS.md`](RESULTS.md).** The code: [`sativa_epang/`](sativa_epang/),
-also on the `epa-ng` branch of [Aaramis/sativa](https://github.com/Aaramis/sativa/tree/epa-ng),
+also on the `epa-ng` branch of [Aaramis/sativa-epang](https://github.com/Aaramis/sativa-epang/tree/epa-ng),
 a fork of `amkozlov/sativa`, where the whole modification reads as one diff. The rest of this file says what
 is here and how to run it.
 
