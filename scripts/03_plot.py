@@ -43,7 +43,7 @@ AGREEMENT_ROWS = [
 ]
 CONTROL_ROW = "upstream_py2_raxml_T1"       # unmodified SATIVA, python-2 build
 
-TITLE = "The leave-one-out is the whole cost, and the whole speed-up"
+TITLE = "SATIVA with EPA-ng: runtime and agreement"
 
 # "Original" is upstream v0.9.3 itself -- the code ours is a three-hunk diff against --
 # so the labels name it rather than saying "original", which invites the wrong baseline.
@@ -335,9 +335,9 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
 
     agreement_rows = agreement_entries(concordance_rows, smallest)
     strict_agreement_rows = agreement_entries(strict_rows, smallest)
-    subtitle = ("Nested subsets of one ITS alignment. Every run uses the same SATIVA decision rule and the same "
-                "RAxML 8.2.3 reference-tree step (grey). What changes is the placement engine: the leave-one-out "
-                "(coloured) and, inside \"other steps\", the final confirmation pass.")
+    subtitle = ("Nested subsets of one ITS alignment. Every run applies the same SATIVA decision rule and builds "
+                "its reference tree with RAxML 8.2.3 (grey). What changes is the placement engine: the "
+                "leave-one-out (coloured) and, inside \"other steps\", the final confirmation pass.")
     footer = ("Medians of the replicates (spread in summary.tsv). Every run works on local disk: on the "
               "project's network filesystem the I/O dominates and adds several-fold noise. Panel A starts at "
               f"{smallest} sequences and panel B follows it. Below about 400, SATIVA's whole-second phase timer "
@@ -354,20 +354,23 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
               "same work done faster. That is why the ratio stops growing, and why at 5 402 sequences the "
               "speed-up comes from threads: EPA-ng parallelises over queries, RAxML over 242 alignment columns, "
               "where there is nothing to split.")
-    note_c = (f"The same comparison with both sides filtered at confidence >= {strict_cutoff:g}, the regime a "
-              "curation pipeline would actually integrate. Raising the cutoff does not make the two agree: "
-              "recall reaches 1.000 at n=800 but falls to 0.83 at n=1 600 and 0.72 at n=5 402. Confidence "
-              "predicts reproducibility only at the bottom of its range: pooled over all sizes, reference "
-              "calls between 0.40 and 0.50 are reproduced 0.64 of the time against about 0.8 everywhere "
-              "above, and a call at 0.95 is no safer than one at 0.6. So these are not low-confidence noise. "
-              "The injected-mislabel test in RESULTS.md shows that a fold removing several sequences at once "
-              "catches duplicated wrong labels a strict leave-one-out cannot see.")
-    note_b = ("Each row: the EPA-ng version against unmodified SATIVA v0.9.3, sequence by sequence, on the same "
-              "alignment. K is the number of folds the leave-one-out is split into, the only approximation in "
-              "the modification, and the knob that closes most of the gap: K=5 prunes a fifth of the tree per "
-              "fold, K=25 a twenty-fifth. Nothing here is run-to-run noise: at a fixed seed the replicates give identical calls "
-              "(33/33 conditions). For scale, upstream's own python-3 port moves 3 calls out of 24 at n=400 "
-              "against its last python-2 commit; see concordance.tsv.")
+    note_c = (f"The same comparison with both sides filtered at confidence >= {strict_cutoff:g}. It does not "
+              "make the two agree: with K=25, recall is 0.93 at n=800, 0.86 at n=1 600, 0.81 at n=5 402. And "
+              "confidence predicts reproducibility only at the bottom of its range: calls between 0.40 and 0.50 "
+              "are reproduced 0.69 of the time, against about 0.8 above, with a call at 0.95 no safer than one "
+              "at 0.6.")
+    note_b = ("Each row: the EPA-ng version against unmodified SATIVA v0.9.3, sequence by sequence, cutoff 0.4 "
+              "on both sides. K is the number of folds the leave-one-out is split into, the only approximation "
+              "in the modification and the knob that closes most of the gap. At a fixed seed the replicates give "
+              "identical calls, so none of this is run-to-run noise.")
+    note_a = ("Upstream v0.9.3 is SATIVA as its authors ship it, python 3 included. The EPA-ng version is that "
+              "same code with the placement engine swapped: the decision-logic files are byte-identical, the "
+              "diff is two hunks in sativa.py, one in config.py and one new module. The badge over each panel "
+              "says what SATIVA asks RAxML to do at that size: past 500 taxa GTRCAT instead of GTRGAMMA, past "
+              "1 000 taxa a thorough insertion on a fraction of the branches only. Those shortcuts barely change "
+              "its output (119 flags against 118 at n=1 600) but they do make the orange bar a cheaper "
+              "computation from n=800 on, which is why the ratio stops growing. The EPA-ng version keeps its own "
+              "reference tree on GTRGAMMA at every size, so that EPA-ng reads a fitted shape parameter.")
     subtitle_lines = wrap(subtitle, width - 0.2, 9.2)
     note_a_lines = wrap(note_a, width - 0.2, 8.6)
     note_b_lines = wrap(note_b, width - 0.2, 8.6)
@@ -426,7 +429,7 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
         fig.text(0.008, y_of("subtitle") - (0.02 + 0.20 * i) / height, line,
                  fontsize=9.2, color=INK_SOFT, ha="left", va="top")
 
-    fig.text(0.008, y_of("section_a") - 0.04 / height, "A · where the time goes",
+    fig.text(0.008, y_of("section_a") - 0.04 / height, "A · Runtime, split by phase",
              fontsize=10.5, color=INK, ha="left", va="top", fontweight="bold")
     for i, line in enumerate(note_a_lines):
         fig.text(0.008, y_of("section_a_note") - (0.02 + 0.19 * i) / height, line,
@@ -443,14 +446,14 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
 
     fig.legend(handles=[
         Patch(facecolor=RESIDUAL, label="other SATIVA steps (bookkeeping, rounding)"),
-        Patch(facecolor=SHARED, label="reference tree (RAxML), identical everywhere"),
+        Patch(facecolor=SHARED, label="reference tree (RAxML)"),
         Patch(facecolor=ORANGE, label="leave-one-out: RAxML -f O"),
         Patch(facecolor=AQUA, label="leave-one-out: EPA-ng"),
     ], loc="upper left", bbox_to_anchor=(left_frac, y_of("legend_a")), frameon=False,
         fontsize=8.5, ncol=legend_cols, labelcolor=INK, handlelength=1.1,
         handleheight=1.1, columnspacing=1.6, borderaxespad=0)
 
-    fig.text(0.008, y_of("section_b") - 0.04 / height, "B · how the calls differ from the original",
+    fig.text(0.008, y_of("section_b") - 0.04 / height, "B · Per-sequence agreement with unmodified SATIVA",
              fontsize=10.5, color=INK, ha="left", va="top", fontweight="bold")
     # The control row is the point of the panel, and it needs saying where it is read.
     for i, line in enumerate(note_b_lines):
@@ -471,7 +474,7 @@ def figure_main(table, concordance_rows, strict_rows, outdir, timeout_hint,
         handleheight=1.1, columnspacing=1.6, borderaxespad=0)
 
     fig.text(0.008, y_of("section_c") - 0.04 / height,
-             f"C · the same comparison, above {strict_cutoff:g} confidence",
+             f"C · The same, keeping only calls above {strict_cutoff:g} confidence",
              fontsize=10.5, color=INK, ha="left", va="top", fontweight="bold")
     for i, line in enumerate(note_c_lines):
         fig.text(0.008, y_of("section_c_note") - (0.02 + 0.19 * i) / height, line,
