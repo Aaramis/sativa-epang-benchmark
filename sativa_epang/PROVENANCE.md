@@ -24,7 +24,7 @@ the branch labelling, the confidence computation and the reference tree step are
 
 | Variable | Default | Effect |
 |---|---|---|
-| `SATIVA_EPANG_FOLDS` | 5 | Number of folds the leave one out is split into. A value at or above the leaf count gives one sequence per fold, the strict leave one out. |
+| `SATIVA_EPANG_FOLDS` | 25 | Number of folds the leave one out is split into. A value at or above the leaf count gives one sequence per fold, the strict leave one out. |
 | `SATIVA_L1O_ENGINE` | `epang` | `raxml` reverts both placement passes to RAxML. |
 | `SATIVA_EPANG_HEUR` | `on` | `off` passes `--no-heur` to EPA-ng, which then evaluates every branch, as RAxML does below 1000 taxa. |
 | `SATIVA_EPANG_BLO` | `sliding` | `raxml` passes `--raxml-blo`, RAxML style branch length optimisation. |

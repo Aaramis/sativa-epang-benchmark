@@ -50,11 +50,11 @@ CONDITIONS = {
     "upstream_py3_raxml_T8":  {"impl": "upstream_py3", "engine": "raxml", "threads": 8},
     "port_py3_raxml_T1":      {"impl": "port",     "engine": "raxml", "threads": 1},
     "port_py3_raxml_T8":      {"impl": "port",     "engine": "raxml", "threads": 8},
-    "port_py3_epang_T1":      {"impl": "port",     "engine": "epang", "threads": 1},
-    "port_py3_epang_T2":      {"impl": "port",     "engine": "epang", "threads": 2},
-    "port_py3_epang_T4":      {"impl": "port",     "engine": "epang", "threads": 4},
-    "port_py3_epang_T8":      {"impl": "port",     "engine": "epang", "threads": 8},
-    "port_py3_epang_T16":     {"impl": "port",     "engine": "epang", "threads": 16},
+    "port_py3_epang_T1":      {"impl": "port",     "engine": "epang", "threads": 1, "folds": 5},
+    "port_py3_epang_T2":      {"impl": "port",     "engine": "epang", "threads": 2, "folds": 5},
+    "port_py3_epang_T4":      {"impl": "port",     "engine": "epang", "threads": 4, "folds": 5},
+    "port_py3_epang_T8":      {"impl": "port",     "engine": "epang", "threads": 8, "folds": 5},
+    "port_py3_epang_T16":     {"impl": "port",     "engine": "epang", "threads": 16, "folds": 5},
     # Lining EPA-ng up with RAxML's placement rules, one at a time. SATIVA runs
     # `raxmlHPC -f O` with no preplacement heuristic (below 1000 taxa), RAxML-style branch
     # length optimisation and an accumulated-LWR cutoff of 0.999; EPA-ng defaults to a

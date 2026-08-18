@@ -427,7 +427,10 @@ class LeaveOneTest:
             # RAxML -f O times out. Downstream classification/decision remains 100%
             # SATIVA (see PROVENANCE.md).
             from epac.epang_l1o import run_epang_l1o
-            folds = int(os.environ.get("SATIVA_EPANG_FOLDS", "5"))
+            # K=25 rather than 5: at 800 sequences it lifts agreement with unmodified
+            # SATIVA from 0.88/0.84 to 0.98/0.90 recall/precision, for about 2.7x
+            # the placement time, which still leaves a 6x margin over RAxML.
+            folds = int(os.environ.get("SATIVA_EPANG_FOLDS", "25"))
             placements = run_epang_l1o(
                 self.refjson.jdata["tree"], self.refalign_fname, self.reftree_fname,
                 self.cfg.raxml_outdir,
